@@ -4,6 +4,7 @@ import { AiFillEdit } from "react-icons/ai";
 import { AiFillDelete } from "react-icons/ai";
 import { MdDone } from "react-icons/md";
 import "./styles.css";
+import e from "express";
 
 type Props = {
   todo: Todo;
@@ -12,6 +13,9 @@ type Props = {
 };
 
 const SingleTodo = ({ todos, todo, setTodos }: Props) => {
+  const [isEdit, setIsEdit] = React.useState<boolean>(false);
+  const [editTodo, setEditTodo] = React.useState<string>(todo.todo);
+
   const handleDone = (id: number) => {
     setTodos(
       todos.map((todo) =>
@@ -24,15 +28,35 @@ const SingleTodo = ({ todos, todo, setTodos }: Props) => {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
 
+  const handleEdit = (e: React.FormEvent, id: number) => {
+    e.preventDefault();
+    setTodos(
+      todos.map((todo) => (todo.id === id ? { ...todo, todo: editTodo } : todo))
+    );
+    setIsEdit(false);
+  };
   return (
-    <form className="todos__single">
-      {todo.isDone ? (
-        <span className="todos__single--text">{todo.todo}</span>
-      ) : (
+    <form className="todos__single" onSubmit={(e) => handleEdit(e, todo.id)}>
+      {isEdit ? (
+        <input
+          value={editTodo}
+          onChange={(e) => setEditTodo(e.target.value)}
+          className="todos__single--text"
+        />
+      ) : todo.isDone ? (
         <s className="todos__single--text">{todo.todo}</s>
+      ) : (
+        <span className="todos__single--text">{todo.todo}</span>
       )}
       <div>
-        <span className="icon">
+        <span
+          className="icon"
+          onClick={() => {
+            if (!isEdit && !todo.isDone) {
+              setIsEdit(!isEdit);
+            }
+          }}
+        >
           <AiFillEdit />
         </span>
         <span className="icon" onClick={() => handleDelete(todo.id)}>
