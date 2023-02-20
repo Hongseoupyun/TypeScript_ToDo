@@ -1,7 +1,15 @@
-import React from 'react'
+import React from "react";
+import "./InputField.css";
 
 export default function InputField() {
   return (
-    <div>InputField</div>
-  )
+    <form className="input">
+      <input
+        type="input"
+        placeholder="Enter a Todo"
+        className="input__box "
+      ></input>
+      <button className="input__submit">Add</button>
+    </form>
+  );
 }

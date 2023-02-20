@@ -2,7 +2,7 @@ import React from "react";
 import InputField from "./components/InputField";
 import "./App.css";
 
-function App(): React.ReactNode {
+function App() {
   return (
     <div className="App">
       <span className="heading">TypeScript Todo</span>

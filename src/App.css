@@ -1,5 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600&family=Mukta:wght@200;300;400;500&family=Open+Sans:wght@300;400;500&family=Roboto&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
+*{
+  font-family: comfortaa;
+}
 .App {
   width: 100vw;
   min-height: 100vh;
