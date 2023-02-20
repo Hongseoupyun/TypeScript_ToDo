@@ -7,9 +7,9 @@ export default function InputField() {
       <input
         type="input"
         placeholder="Enter a Todo"
-        className="input__box "
+        className="input__box"
       ></input>
-      <button className="input__submit">Add</button>
+      <button className="input_submit">Add</button>
     </form>
   );
 }
