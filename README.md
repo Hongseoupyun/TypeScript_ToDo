@@ -4,7 +4,7 @@
 
 # Pesudocode / Logical Approach
 
-##App/General
+## App/General
 1.App component has single todo, Todos(array of todo) and completedTodos(array of todo)
 
 2.Define Todo interface in mode.ts
@@ -14,18 +14,18 @@ todo: string;
 isDone: boolean;
 }
 ```
-##InputField
+## InputField
 
 3.Take inputs from users as a single todo using InputField components and add it on todos using setTodos.
 
 4.Implement auto focus and blur features using useRef when user types input in the inputfield and press enter.
 
-##TodoList
+## TodoList
 5.The TodoList component will consist of two containers: one for active todos and another for completed todos.
 
 6.Each container will have SingleTodo components which maps out todos(active) and completedTodos(completed) respectively.
 
-##SingleTodo
+## SingleTodo
 7.conditional rendering when a single todo item is set to edit or complete.
 
 8.SingleTodo will have form that contains input field to edit and edit, delete and complete buttons.
@@ -38,9 +38,9 @@ isDone: boolean;
 
 12.handleDone; change value of isDone to true using setTodos.
 
-##Drag and Drop functionality<br>
-
-1.Install "react-beautiful-dnd"; and improt { DragDropContext, DropResult } in App.tsx.
+## Drag and Drop functionality<br>
+ 
+1.Install``` "react-beautiful-dnd";``` and improt ```{ DragDropContext, DropResult }``` in App.tsx.
 
 2.Wrap the App component with 
 ```
