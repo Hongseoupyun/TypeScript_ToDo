@@ -11,6 +11,10 @@ export default function InputField(props: Props) {
   const { todo, setTodo, handleAdd } = props;
   const inputRef = useRef<HTMLInputElement>(null);
 
+  useEffect(() => {
+    inputRef.current?.focus();
+  }, []);
+
   return (
     <form
       className="input"
