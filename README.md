@@ -52,18 +52,18 @@ isDone: boolean;
 4.Wrap the SingleTodo(which you will drag) component with ```<Draggable>``` and give unique droppableId and index. 
 
 5.Implement onDragEnd function that handles drag and drop features;
-```
-  -Define base cases ; when item is dropped in same place in same position or there is no destionation to drop your item, return
 
-  -Declare two variables add, active and complete, where active and complete are arrays of todo items.
+  * Define base cases ; when item is dropped in same place in same position or there is no destionation to drop your item, return
 
-  -Check the droppableId property of the source object to determine if the dragged item is coming from the "TodosTodo" list or the "completedTodos" list.
+  * Declare two variables add, active and complete, where active and complete are arrays of todo items.
 
-  -Assign the item being dragged to the add variable and remove it from either the active or complete array using the splice() method.
+  * Check the droppableId property of the source object to determine if the dragged item is coming from the "TodosTodo" list or the "completedTodos" list.
 
-  -Check the droppableId property of the destination object to determine if the dragged item is being dropped back into the "TodosTodo" list or the "completedTodos" list.
+  * Assign the item being dragged to the add variable and remove it from either the active or complete array using the splice() method.
 
-  -Use the splice() method to insert the add item into the appropriate array at the specified index.
+  * Check the droppableId property of the destination object to determine if the dragged item is being dropped back into the "TodosTodo" list or the "completedTodos" list.
 
-  -Update the completedTodos and todos state variables with the modified arrays using the setCompletedTodos() and setTodos() functions, respectively.
-  ```
+  * Use the splice() method to insert the add item into the appropriate array at the specified index.
+
+  * Update the completedTodos and todos state variables with the modified arrays using the setCompletedTodos() and setTodos() functions, respectively.
+  
